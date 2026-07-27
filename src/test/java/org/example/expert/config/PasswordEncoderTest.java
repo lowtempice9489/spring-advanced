@@ -20,7 +20,8 @@ class PasswordEncoderTest {
         String encodedPassword = passwordEncoder.encode(rawPassword);
 
         // when
-        boolean matches = passwordEncoder.matches(encodedPassword, rawPassword);
+        boolean matches = passwordEncoder.matches(rawPassword, encodedPassword);
+        // "testPassword"라는 평문이 encodedPassword로 암호화된 값과 일치하는가?
 
         // then
         assertTrue(matches);
